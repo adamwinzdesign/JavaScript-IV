@@ -25,4 +25,39 @@ class Instructor extends Person {
   demo(subject) {
     return `Today we are learning about ${subject}.`
   }
+  grade(student, subject) {
+    return `${student.name} gets a perfect score in ${subject}!`
+  }
+}
+
+class Student extends Person {
+  constructor(attr) {
+    super(attr);
+    this.previousBackground = attr.previousBackground,
+    this.className = attr.className,
+    this.favSubjects = attr.favSubjects
+  }
+  listsSubjects() {
+    return `${this.name}'s favorite subjects are ${this.favSubjects}.`
+  }
+  PRAssignment(student, subject) {
+    return `${this.name} submitted a pull request for ${this.subject}`
+  }
+  sprintChallenge(subject) {
+    return `${student.name} has begun a sprint challenge on ${subject}`
+  }
+}
+
+class ProjectManager extends Instructor {
+  constructor(attr) {
+    super(attr);
+    this.gradClassName = attr.gradClassName,
+    this.favInstructor = attr.favInstructor
+  }
+  standUp(name, channel) {
+    return `${name} announces to ${channel}@channel that the time for standup has arrived!`
+  }
+  debugsCode(student, subject) {
+    return `${name} debugs ${student.name}'s code on ${subject}.`
+  }
 }
