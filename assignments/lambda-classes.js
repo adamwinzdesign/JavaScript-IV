@@ -37,8 +37,12 @@ class Student extends Person {
     this.className = attr.className,
     this.favSubjects = attr.favSubjects
   }
+
   listsSubjects() {
-    return `${this.name}'s favorite subjects are ${this.favSubjects}.`
+    // return `${this.name}'s favorite subjects are ${this.favSubjects}.`
+    this.favSubjects.forEach(function(favSubjects){
+      return favSubjects;
+    });
   }
   
   PRAssignment(subject) {
@@ -105,7 +109,9 @@ const thanos = new ProjectManager({
   location: 'Titan',
   specialty: 'Genocide',
   favLanguage: 'Violence',
-  catchPhrase: 'Perfectly balanced...as all things should be.'
+  catchPhrase: 'Perfectly balanced...as all things should be.',
+  gradClassName: 'CS45',
+  favInstructor: bruce
 });
 
 const galactus = new ProjectManager({
@@ -114,8 +120,10 @@ const galactus = new ProjectManager({
   location: 'The Cosmic Egg',
   specialty: 'Consuming Planets',
   favLanguage: 'Heralds',
-  catchPhrase: 'There does not exist a mortal who can stand before Galactus.'
-})
+  catchPhrase: 'There does not exist a mortal who can stand before Galactus.',
+  gradClassName: 'WEB2PT',
+  favInstructor: tony
+});
 
 console.log(adam.speak());
 console.log(adam.age, adam.location);
@@ -132,14 +140,16 @@ console.log(tony.grade(adam, `Quantum Mechanics`));
 
 console.log(bruce.speak());
 console.log(bruce.grade(spidey, 'biology'));
-console.log(bruce.demo('nuclear safety'))
+console.log(bruce.demo('nuclear safety'));
 
 console.log(galactus.speak());
 console.log(galactus.catchPhrase);
 console.log(galactus.demo('destruction'));
 console.log(galactus.specialty);
-console.log(galactus.debugsCode(spidey, 'witty retorts'))
+console.log(galactus.debugsCode(spidey, 'witty retorts'));
+console.log(galactus.favInstructor.catchPhrase);
 
 console.log(thanos.debugsCode(adam, 'reality'));
 console.log(thanos.catchPhrase);
 console.log(thanos.standUp('Web24'));
+console.log(thanos.favInstructor.name);
