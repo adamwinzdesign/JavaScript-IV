@@ -39,10 +39,9 @@ class Student extends Person {
   }
 
   listsSubjects() {
-    // return `${this.name}'s favorite subjects are ${this.favSubjects}.`
-    this.favSubjects.forEach(function(favSubjects){
-      return favSubjects;
-    });
+    this.favSubjects.forEach(subj => {
+      console.log(`One of ${this.name}'s favorite subjects is ${subj}.`)
+   });
   }
   
   PRAssignment(subject) {
@@ -129,10 +128,11 @@ console.log(adam.speak());
 console.log(adam.age, adam.location);
 console.log(adam.PRAssignment('JavaScript'));
 console.log(adam.sprintChallenge('React'));
+adam.listsSubjects();
 
 console.log(spidey.speak());
 console.log(spidey.age, spidey.location);
-console.log(spidey.listsSubjects());
+spidey.listsSubjects();
 
 console.log(tony.speak());
 console.log(tony.favLanguage);
@@ -149,6 +149,7 @@ console.log(galactus.specialty);
 console.log(galactus.debugsCode(spidey, 'witty retorts'));
 console.log(galactus.favInstructor.catchPhrase);
 
+console.log(thanos.speak());
 console.log(thanos.debugsCode(adam, 'reality'));
 console.log(thanos.catchPhrase);
 console.log(thanos.standUp('Web24'));
